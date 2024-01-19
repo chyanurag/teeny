@@ -1,10 +1,10 @@
 from lexer import *
+from parser import *
 
 def main():
-    source = "--this is something random\n +-*/ *-\n -- this is something extra "
+    source = open('code.bs').read()
     lexer = Lexer(source)
-    token = lexer.getToken()
-    while token.kind != TokenType.EOF:
-        print(token.kind)
-        token = lexer.getToken()
+    parser = Parser(lexer)
+    parser.program()
+    print('Parsing completed')
 main()
