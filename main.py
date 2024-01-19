@@ -1,9 +1,10 @@
 from lexer import *
 
 def main():
-    source = "LET foobar = 182"
+    source = "--this is something random\n +-*/ *-\n -- this is something extra "
     lexer = Lexer(source)
-    while lexer.peek() != '\0':
-        print(lexer.curChar)
-        lexer.nextChar()
+    token = lexer.getToken()
+    while token.kind != TokenType.EOF:
+        print(token.kind)
+        token = lexer.getToken()
 main()
