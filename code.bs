@@ -1,6 +1,0 @@
-LET X = 4
-LET Y = 5
-PRINT 5
-IF X > 5
-    PRINT "THIS"
-

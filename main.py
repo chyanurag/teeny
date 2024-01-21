@@ -1,10 +1,12 @@
-from lexer import *
-from parser import *
+from lex import *
 
 def main():
-    source = open('code.bs').read()
+    source = 'LET foo = 123'
     lexer = Lexer(source)
-    parser = Parser(lexer)
-    parser.program()
-    print('Parsing completed')
+
+    tok = lexer.getToken()
+    while tok.kind != TokenType.EOF:
+        print(tok.kind)
+        tok = lexer.getToken()
+
 main()
