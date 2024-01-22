@@ -7,6 +7,7 @@ class TokenType(enum.Enum):
     NUMBER = 1
     IDENT = 2
     STRING = 3
+    CCODE = 4
     # Keywords.
     LABEL = 101
     GOTO = 102
@@ -102,6 +103,12 @@ class Lexer:
                 tok = Token('==', TokenType.EQEQ)
             else:
                 tok = Token('=', TokenType.EQ)
+        elif self.curChar == '`':
+            startPos = self.curPos
+            self.nextChar()
+            while self.curChar != '`':
+                self.nextChar()
+            tok = Token(self.source[startPos + 1 : self.curPos], TokenType.CCODE)
 
         elif self.curChar == '>':
             if self.peek() == '=':

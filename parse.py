@@ -147,6 +147,10 @@ class Parser:
             self.emitter.emitLine("}")
             self.match(TokenType.IDENT)
 
+        elif self.checkToken(TokenType.CCODE):
+            self.emitter.emitLine(self.curToken.text)
+            self.nextToken()
+
         else:
             self.abort("Invalid statment at : " + self.curToken.text + " ( " + self.curToken.kind.name + " ) ")
         
