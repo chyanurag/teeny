@@ -106,6 +106,13 @@ class Lexer:
                 tok = Token('>=', TokenType.GTEQ)
             else:
                 tok = Token('>', TokenType.GT)
+        elif self.curChar == '<':
+            if self.peek() == '=':
+                lastChar = self.curChar
+                self.nextChar()
+                tok = Token(lastChar + self.curChar, TokenType.LTEQ)
+            else:
+                tok = Token(self.curChar, TokenType.LT)
         elif self.curChar == '!':
             if self.peek() == '=':
                 self.nextChar()
@@ -151,7 +158,7 @@ class Lexer:
                 tok = Token(tokText, keyword)
 
         else:
-            self.abort("unknown token")
+            self.abort("unknown token" + self.curChar)
 
 
         self.nextChar()
