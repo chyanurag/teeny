@@ -1,4 +1,0 @@
-LET a = 4
-`
-printf("%f\n", a);
-`
