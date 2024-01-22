@@ -1,0 +1,17 @@
+PRINTLN "This program will tell you the average of numbers"
+PRINTLN "Enter the total number of terms"
+
+INPUT n
+LET i = n
+
+LET sum = 0
+
+WHILE i > 0 REPEAT
+    INPUT a
+    LET sum = sum + a
+    LET i = i - 1
+ENDWHILE
+
+PRINT "The average of all the numbers is : "
+PRINT sum / n
+PRINTLN ""
