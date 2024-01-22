@@ -1,12 +1,17 @@
 from lex import *
+from parse import *
+import sys
 
 def main():
-    source = 'LET foo = 123'
+    print("Teeny tiny compiler")
+    if len(sys.argv) != 2:
+        sys.exit("filename required")
+    with open(sys.argv[1], "r") as f:
+        source = f.read()
     lexer = Lexer(source)
+    parser = Parser(lexer)
 
-    tok = lexer.getToken()
-    while tok.kind != TokenType.EOF:
-        print(tok.kind)
-        tok = lexer.getToken()
+    parser.program()
+    print("Parsing completed")
 
 main()
