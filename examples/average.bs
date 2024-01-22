@@ -6,6 +6,7 @@ LET i = n
 
 LET sum = 0
 
+PRINTLN "Enter the numbers seperated by a space"
 WHILE i > 0 REPEAT
     INPUT a
     LET sum = sum + a

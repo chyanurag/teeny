@@ -1,0 +1,14 @@
+PRINTLN "How many digits do you want"
+INPUT n
+LET a = 0
+LET b = 1
+
+WHILE n > 0 REPEAT
+    PRINT a
+    PRINT " "
+    LET c = a + b
+    LET a = b
+    LET b = c
+    LET n = n - 1
+ENDWHILE
+PRINTLN ""

@@ -1,0 +1,10 @@
+PRINT "Enter your age : "
+INPUT age
+LET drive = 0
+IF age >= 18 THEN
+    PRINTLN "You can drive"
+    LET drive = 1
+ENDIF
+IF drive != 1 THEN
+    PRINTLN "You can't drive"
+ENDIF
