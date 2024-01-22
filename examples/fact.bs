@@ -1,0 +1,9 @@
+PRINTLN "Enter the number"
+INPUT N
+LET ANS = 1
+
+WHILE N > 0 REPEAT
+    LET ANS = ANS * N
+    LET N = N - 1
+ENDWHILE
+PRINTLN ANS
