@@ -1,4 +1,2 @@
 #!/bin/sh
-python main.py $1
-gcc out.c -o out
-./out
+python main.py $1 && gcc out.c -o out && ./out
